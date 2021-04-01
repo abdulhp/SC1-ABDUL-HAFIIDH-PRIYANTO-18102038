@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas</title>
+</head>
+<body>
+    <center>
+        <h1>Input Data Buku Perpustakaan</h1>
+        <form action="">
+            <Table>
+                <tr>
+                    <td>Judul Buku</td>
+                    <td>: <input type="text" name="judul_buku" /></td>
+                </tr>
+                <tr>
+                    <td>Nama Penulis</td>
+                    <td>: <input type="text" name="nama_penulis" /></td>
+                </tr>
+                <tr>
+                    <td>No. ISBN</td>
+                    <td>: <input type="text" name="no_isbn" /></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Terbit</td>
+                    <td>: <input type="date" name="tanggal_terbit" /></td>
+                </tr>
+                <tr>
+                    <td>Kategori</td>
+                    <td>: <select name="kategori" size="3" multiple>
+                        <option disabled>-- Pilih Kategori --</option>
+                        <option value="novel">Novel</option>
+                        <option value="ensiklopedia">Ensiklopedia</option>
+                        <option value="pelajaran">Pelajaran</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Cover Buku</td>
+                    <td>: <input type="file" name="cover_buku" /></td>
+                </tr>
+                <tr>
+                    <td>Deskripsi</td>
+                    <td>: <textarea name="deskripsi" rows="10" cols="30"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit"></td>
+                </tr>
+            </Table>
+        </form>
+    </center>
+</body>
+</html>
