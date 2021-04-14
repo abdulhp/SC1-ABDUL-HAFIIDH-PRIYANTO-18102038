@@ -11,10 +11,21 @@
     <label>Hasil: </label><label id="hasil">0</label><br>
     <br>
     <br>
+
     <label>Konversi nilai angka ke huruf</label><br>
     <input type="number" placeholder="masukkan nilai angka" class="nilai_angka" /><br>
     <button onclick="konversi()">Konversi</button><br>
     <label>Nilai huruf kamu adalah : </label><label id="hasil2">-</label><br>
+    <br>
+    <br>
+
+    <label>Daftar Belanja</label><br>
+    <input type="text" placeholder="Nama Barang" id="nama_barang"/>
+    <input type="number" placeholder="Jumlah" onkeyup="hitung_total()" id="jumlah"/>
+    <input type="number" id="harga" placeholder="Harga" onkeyup="hitung_total()"/>
+    <input type="number" readonly placeholder="Total" id="total"/><br>
+    <button onclick="cetak()">Cetak</button><br>
+
     <script type="text/javascript">
         window.alert('selamat datang di halaman embedded script');
         document.getElementById("hitung").onclick = function () {hitung_luas_segitiga()};
@@ -37,6 +48,20 @@
             else if(nilai_angka[0].value >= 30) grade = "E"
             else grade = "F";
             document.getElementById('hasil2').innerHTML = grade;
+        }
+
+        function hitung_total(){
+            var jumlah = document.getElementById('jumlah').value;
+            var harga = document.getElementById('harga').value;
+            if(jumlah == "" || harga == ""){
+                document.getElementById('total').value = 0;
+            }else {
+                document.getElementById('total').value = jumlah * harga;
+            }
+        }
+
+        function cetak(){
+            window.print();
         }
     </script>
 </body>
