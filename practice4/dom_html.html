@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM HTML</title>
+</head>
+<body>
+
+    <!-- Changing the HTML Output Stream -->
+    <script>document.write(Date())</script>
+
+    <!-- Changeing HTML Content -->
+    <p id="p1">Hello World!</p>
+    <script>document.getElementById("p1").innerHTML = "New text!"</script>
+
+    <h1 id="id01">Old Heading</h1>
+    <script>
+        var element = document.getElementById("id01");
+        element.innerHTML = "New Heading";
+    </script>
+
+    <!-- Changing the Value of an Attribute -->
+    <img src="https://www.w3schools.com/js/smiley.gif" id="myImage">
+    <script>document.getElementById("myImage").src = "https://www.w3schools.com/js/landscape.jpg"</script>
+</body>
+</html>
