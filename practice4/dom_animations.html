@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Animations</title>
+    <link rel="stylesheet" href="css/dom_animations.css">
+</head>
+<body>
+    <!-- A Basic Web Page -->
+    <h1>My First JavaScript Animations</h1>
+    <div id="animation">My animation will go here</div>
+
+    <!-- Create an Animation Container -->
+    <div id="container">
+        <div id="animate">My animation will go here</div>
+    </div>
+
+    <!-- Style the Elements: Adding dom_animations.css -->
+
+    <!-- Animation Code -->
+    <script>
+        var id = setInterval(frame, 5);
+
+        function frame() {
+            if (/* test for finished */ 1) {
+                clearInterval(id);
+            }else {
+                /* code to change the element style */
+            }
+        }
+    </script>
+
+    <!-- Create the Full Animation Using JavaScript -->
+    <button onclick="myMove()">Click Me!</button>
+    <script>
+        var id1 = null;
+
+        function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            clearInterval(id1);
+            id1 = setInterval(frame, 5);
+            function frame() {
+                if(pos == 350) {
+                    clearInterval(id1);
+                }else{
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
