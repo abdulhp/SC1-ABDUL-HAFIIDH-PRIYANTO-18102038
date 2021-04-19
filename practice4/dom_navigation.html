@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Navigation</title>
+</head>
+<body>
+    <!-- Child Nodes and Node Values -->
+    <h1>Child Nodes and Node Values</h1>
+    <h1 id="id01">My First Page</h1>
+    <p id="id02"></p>
+    
+    <script>
+        document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+    </script>
+    
+    <!-- Inner HTML -->
+    <h1>Inner HTML</h1>
+    
+    <p>Hello World!</p>
+    <div>
+        <p>The DOM is very useful!</p>
+        <p>This example demonstrates the <b>document.body</b> property.</p>
+    </div>
+    
+    <script>
+        alert(document.body.innerHTML);
+    </script>
+    
+    <!-- The nodeName Property -->
+    <h1>The nodeName Property</h1>
+    
+    <h1 id="id03">My First Page</h1>
+    <p id="id04"></p>
+    
+    <script>
+        document.getElementById("id04").innerHTML = document.getElementById("id03").nodeName;
+    </script>
+    
+    <!-- The nodeType Property -->
+    <h1>The nodeType Property</h1>
+    <h1 id="id05">My First Page</h1>
+    <p id="id06"></p>
+    
+    <script>
+        document.getElementById("id06").innerHTML = document.getElementById("id05").nodeType;
+    </script>
+    
+</body>
+</html>
