@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Events</title>
+</head>
+<body onload="checkCookies()">
+    <!-- Reacting to Events -->
+    <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+    <script>
+        function changeText(id) {
+            id.innerHTML = "Ooops!";
+        }
+    </script>
+    
+    <!-- HTML Event Attributes -->
+    <button onclick="displayDate()" id="myBtn">Try it</button>
+    
+    <!-- Assign Events Using the HTML DOM -->
+    <script>
+        document.getElementById("myBtn").onclick = displayDate;
+    </script>
+    
+    <!-- The onload and onunload Events: Check Body -->
+    
+    <!-- The onchage Event -->
+    <input type="text" id="fname" onchange="upperCase()">
+    <script>
+        function upperCase(){
+            var data = document.getElementById("fname").value;
+            var uppercased = data.toUpperCase();
+            document.getElementById("fname").value = uppercased;
+        }
+    </script>
+    
+    <!-- The onmouseover and onmouseout Events -->
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+        Mouse Over Me
+    </div>
+    <script>
+        function mOver(obj) {
+            obj.innerHTML = "Thank You"
+        }
+        
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me"
+        }
+    </script>
+    
+    <!-- The onmousedown, onmouseup and onclick Events -->
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+        Click Me
+    </div>
+    <script>
+        function mDown(obj) {
+            obj.style.backgroundColor = "#1ec5e5";
+            obj.innerHTML = "Release Me";
+        }
+        
+        function mUp(obj) {
+            obj.style.backgroundColor="#D94A38";
+            obj.innerHTML="Thank You";
+        }
+    </script>
+</body>
+</html>
