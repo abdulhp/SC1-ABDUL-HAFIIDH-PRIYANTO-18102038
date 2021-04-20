@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Nodes</title>
+</head>
+<body>
+    <!-- Creating New HTML Elements(Nodes) -->
+    <h1>Creating new HTML elements(nodes)</h1>
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+    
+    <script>
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+    </script>
+    
+    <!-- insertBefore() -->
+    <h1>insertBefore()</h1>
+    <div id="div2">
+        <p id="p3">This is a paragraph.</p>
+        <p id="p4">This is another paragraph.</p>
+    </div>
+    
+    <script>
+        var para1 = document.createElement("p");
+        var node1 = document.createTextNode("This is new.");
+        para1.appendChild(node);
+        
+        var element1 = document.getElementById("div2");
+        var child = document.getElementById("p3");
+        element1.insertBefore(para1, child);
+    </script>
+    
+    <!-- Removing Existing HTML Elements -->
+    <h1>Removing existing HTML elements</h1>
+    <div>
+        <p id="p5">This is a paragraph.</p>
+        <p id="p6">This is another paragraph.</p>
+    </div>
+    
+    <script>
+        var elmnt = document.getElementById("p5");
+        elmnt.remove();
+    </script>
+    
+    <!-- Removing a Child Node -->
+    <h1>Removing a child node</h1>
+    <div id="div3">
+        <p id="p7">This is a paragraph.</p>
+        <p id="p8">This is another paragraph.</p>
+    </div>
+    
+    <script>
+        var parent = document.getElementById("div3");
+        var child1 = document.getElementById("p7");
+        parent.removeChild(child1);
+    </script>
+    
+    <!-- Replacing HTML elements -->
+    <h1>Replacing HTML Elements</h1>
+    <div id="div4">
+        <p id="p9">This is a paragraph.</p>
+        <p id="p10">This is another paragraph.</p>
+    </div>
+    
+    <script>
+        var para2 = document.createElement("p");
+        var node2 = document.createTextNode("This is new.");
+        para2.appendChild(node2);
+        
+        var parent1 = document.getElementById("div4");
+        var child2 = document.getElementById("p9");
+        parent1.replaceChild(para2, child2);
+    </script>
+    
+    
+</body>
+</html>
