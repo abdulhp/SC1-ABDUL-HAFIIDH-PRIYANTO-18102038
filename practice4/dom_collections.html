@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Collections</title>
+</head>
+<body>
+    <!-- The HTML Collection Object -->
+    <h1>The HTML collection object</h1>
+    <p>Hello World!</p>
+    
+    <p>Hello Norway!</p>
+    
+    <p id="demo"></p>
+    
+    <script>
+        var myCollection = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML =
+        "The innerHTML of the second paragraph is: " +
+        myCollection[1].innerHTML;
+    </script>
+    
+    <!-- HTML HTMLCollection Length -->
+    <h1>HTML HTMLCollection Length</h1>
+    
+    <p id="demo1"></p>
+    <script>
+        var myCollection = document.getElementsByTagName("p");
+        document.getElementById("demo1").innerHTML = 
+        "This document contains " + myCollection.length + " paragraphs.";
+    </script>
+    
+</body>
+</html>
