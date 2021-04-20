@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Node Lists</title>
+</head>
+<body>
+    <!-- The HTML DOM NodeList Object -->
+    <h1>The HTML DOM NodeList Object</h1>
+    <p>Hello World!</p>
+    
+    <p>Hello Norway!</p>
+    
+    <p id="demo"></p>
+    
+    <script>
+        var myNodelist = document.querySelectorAll("p");
+        document.getElementById("demo").innerHTML =
+        "The innerHTML of the second paragraph is: " +
+        myNodelist[1].innerHTML;
+    </script>
+    
+    <!-- The DOM Node List Length -->
+    <h1>The DOM Node List Length</h1>
+    
+    <p>Hellow World!</p>
+    
+    <p>Hellow Norway!</p>
+    
+    <p id="demo1"></p>
+    
+    <script>
+        var myNodelist = document.querySelectorAll("p");
+        document.getElementById("demo1").innerHTML =
+        "This document contains " + myNodelist.length + " paragraphs.";
+    </script>
+</body>
+</html>
