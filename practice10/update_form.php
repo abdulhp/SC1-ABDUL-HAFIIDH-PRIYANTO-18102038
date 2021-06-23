@@ -71,6 +71,7 @@
           <ul class="list-group mb-3">
             <?php foreach($data_mahasiswa as $mhs) {?>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <img src="<?php echo "./uploads/".$mhs['foto'];?>" alt="Foto" width="50px" height="50px">
               <div>
               <h6 class="my-0"><?= $mhs['nama_lengkap'];?></h6>
               <small class="text-muted"><?= $mhs['alamat'];?></small>
@@ -84,7 +85,7 @@
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Input Data</h4>
-          <form action="simpan_mahasiswa.php" method="POST">
+          <form action="simpan_mahasiswa.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="mahasiswa_id" value="<?php echo $data_select_mahasiswa['mahasiswa_id']?>">
             <div class="mb-3">
                 <label for="nama_lengkap">Nama Lengkap</label>
@@ -108,6 +109,10 @@
                         <option <?php echo $is_selected?> value="<?php echo $kelas['kelas_id'];?>"><?php echo $kelas['nama'];?></option>
                     <?php } ?>
                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="foto">Foto</label>
+                <input type="file" name="gambar" id="gambar">
             </div>
             <div class="row"></div>
             <hr class="mb-4">
