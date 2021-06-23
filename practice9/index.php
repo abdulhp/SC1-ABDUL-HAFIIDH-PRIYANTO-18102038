@@ -1,6 +1,10 @@
 <?php include "koneksi.php"; 
     $qkelas = "SELECT * FROM kelas";
     $data_kelas = $conn->query($qkelas)->fetch_all(MYSQLI_ASSOC);
+
+    $qmhs = "SELECT * FROM mahasiswa JOIN kelas ON mahasiswa.kelas_id = kelas.kelas_id;";
+    $data_mahasiswa = $conn->query($qmhs)->fetch_all(MYSQLI_ASSOC);
+    $jmlData = $conn->query($qmhs)->num_rows;
 ?>
 <!doctype html>
 <html lang="en">
@@ -53,7 +57,21 @@
 
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
-          Konten Data
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Data Mahasiswa</span>
+            <span class="badge badge-secondary badge-pill"><?= $jmlData?></span>
+          </h4>
+          <ul class="list-group mb-3">
+            <?php foreach($data_mahasiswa as $mhs) {?>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+              <h6 class="my-0"><?= $mhs['nama_lengkap'];?></h6>
+              <small class="text-muted"><?= $mhs['alamat'];?></small>
+              </div>
+              <span class="text-muted"><?= $mhs['nama'];?></span>
+            </li>
+            <?php } ?>
+          </ul>
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Input Data</h4>
