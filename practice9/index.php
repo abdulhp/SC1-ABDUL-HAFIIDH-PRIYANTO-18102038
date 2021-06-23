@@ -60,7 +60,7 @@
           <form action="simpan_mahasiswa.php" method="POST">
             <div class="mb-3">
                 <label for="nama_lengkap">Nama Lengkap</label>
-                <input type="text" class="form-control" id="nama_lengkap" required>
+                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
             </div>
             <div class="mb-3">
                 <label for="alamat">Alamat</label>
