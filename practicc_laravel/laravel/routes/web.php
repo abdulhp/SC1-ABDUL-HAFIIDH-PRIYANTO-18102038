@@ -20,25 +20,32 @@ Route::get('/', function () {
 
 //Student
 Route::get('/student/create', 'StudentController@create')
-->name('student.create');
+->name('student.create')
+->middleware('login_auth');
 
 Route::post('/student', 'StudentController@store')
-->name('student.store');
+->name('student.store')
+->middleware('login_auth');
 
 Route::get('/student', 'StudentController@index')
-->name('student.index');
+->name('student.index')
+->middleware('login_auth');
 
 Route::get('/student/{student}', 'StudentController@show')
-->name('student.show');
+->name('student.show')
+->middleware('login_auth');
 
 Route::get('/student/{student}/edit', 'StudentController@edit')
-->name('student.edit');
+->name('student.edit')
+->middleware('login_auth');
 
 Route::patch('/student/{student}', 'StudentController@update')
-->name('student.update');
+->name('student.update')
+->middleware('login_auth');
 
 Route::delete('/student/{student}', 'StudentController@destroy')
-->name('student.destroy');
+->name('student.destroy')
+->middleware('login_auth');
 
 //Admin
 Route::get('/login', 'AdminController@index')
