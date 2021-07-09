@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Student
 Route::get('/student/create', 'StudentController@create')
 ->name('student.create');
 
@@ -37,3 +39,13 @@ Route::patch('/student/{student}', 'StudentController@update')
 
 Route::delete('/student/{student}', 'StudentController@destroy')
 ->name('student.destroy');
+
+//Admin
+Route::get('/login', 'AdminController@index')
+->name('login.index');
+
+Route::get('/logout', 'AdminController@logout')
+->name('login.logout');
+
+Route::post('/login', 'AdminController@process')
+->name('login.process');
