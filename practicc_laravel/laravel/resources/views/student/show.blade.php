@@ -13,7 +13,7 @@
 			<div class="col-12">
 				<div class="pt-3 d-flex justify-content-end align-items-center">
 					<h1 class="h2 mr-auto">Biodata {{$student->name}}</h1>
-					<a href="" class="btn btn-primary">Edit</a>
+					<a href="{{route('student.edit', ['student' => $student->id])}}" class="btn btn-primary">Edit</a>
 					<form action="" method="POST">
 						@method('DELETE')
 						@csrf

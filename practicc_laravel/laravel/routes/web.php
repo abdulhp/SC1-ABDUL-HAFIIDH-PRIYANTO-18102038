@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+ 
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,3 +28,9 @@ Route::get('/student', 'StudentController@index')
 
 Route::get('/student/{student}', 'StudentController@show')
 ->name('student.show');
+
+Route::get('/student/{student}/edit', 'StudentController@edit')
+->name('student.edit');
+
+Route::patch('/student/{student}', 'StudentController@update')
+->name('student.update');
