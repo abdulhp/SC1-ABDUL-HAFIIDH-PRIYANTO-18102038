@@ -34,3 +34,6 @@ Route::get('/student/{student}/edit', 'StudentController@edit')
 
 Route::patch('/student/{student}', 'StudentController@update')
 ->name('student.update');
+
+Route::delete('/student/{student}', 'StudentController@destroy')
+->name('student.destroy');
