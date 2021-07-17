@@ -56,3 +56,10 @@ Route::get('/logout', 'AdminController@logout')
 
 Route::post('/login', 'AdminController@process')
 ->name('login.process');
+
+//AdminLTE
+Route::get('/adminlte/index', 'AdminLTEController@index')
+->name('adminlte.index');
+
+Route::get('/adminlte/student/create', 'AdminLTEStudentController@create')
+->name('adminlte.student.create');
