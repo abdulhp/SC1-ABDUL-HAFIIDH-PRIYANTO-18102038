@@ -15,7 +15,8 @@ class StudentApiController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all()->toJson(JSON_PRETTY_PRINT);
+        return response($students, 200);
     }
 
     /**
