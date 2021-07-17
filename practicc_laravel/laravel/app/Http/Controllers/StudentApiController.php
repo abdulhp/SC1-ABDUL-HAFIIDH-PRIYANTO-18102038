@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Student;
 
 class StudentApiController extends Controller
 {
@@ -34,7 +36,31 @@ class StudentApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = Validator::make($request->all(), [
+            'nim'=>'required|size:8,unique:student,nim',
+            'nama'=>'required|min:3|max:50',
+            'jenis_kelamin'=>'required|in:P,L',
+            'jurusan'=>'required',
+            'alamat'=>'',
+            'image'=>'required|file|image|max:1000',
+        ]);
+        if($validateData->fails()) {
+            return response($validateData->errors(), 400);
+        }else{
+            $mahasiswa = new Student();
+            $mahasiswa->nim = $request->nim;
+            $mahasiswa->name = $request->nama;
+            $mahasiswa->gender = $request->jenis_kelamin;
+            $mahasiswa->department = $request->jurusan;
+            $mahasiswa->address = $request->alamat;
+            if($request->hasFile('image')) {
+                $extFile = $request->image->getClientOriginalExtension();
+                $namaFile = 'user-'.time().".".$extFile;
+                $path = $request->image->move('assets/images', $namaFile);
+                $mahasiswa->image = $path;
+            }
+            $mahasiswa->save();
+            return response()->json(["message"=>"student record created"], 201);}
     }
 
     /**
